@@ -30,6 +30,7 @@ services:
           KC_DB_SCHEMA: public
   #Hostname Configuration
           KC_HOSTNAME: "keycloak.runhare.org"
+          KC_PROXY_ADDRESS_FORWARDING: 'true'
           # KC_HOSTNAME_STRICT_HTTPS: 'true'
   #Admin Credentials
           KEYCLOAK_USER: admin
