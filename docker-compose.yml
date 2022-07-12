@@ -31,7 +31,7 @@ services:
   #Hostname Configuration
           KC_HOSTNAME: "keycloak.runhare.org"
           KC_HOSTNAME_ADMIN: "keycloak.runhare.org"
-          KC_PROXY_ADDRESS_FORWARDING: 'true'
+          PROXY_ADDRESS_FORWARDING: 'true'
           # KC_HOSTNAME_STRICT_HTTPS: 'true'
   #Admin Credentials
           KEYCLOAK_USER: admin
