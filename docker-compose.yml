@@ -6,7 +6,7 @@ services:
         restart: unless-stopped
         environment:
             VIRTUAL_HOST: keycloak.runhare.org
-            VIRTUAL_PORT: 8000
+            VIRTUAL_PORT: 8080
             LETSENCRYPT_HOST: keycloak.runhare.org
             DEFAULT_EMAIL: dickenstawanda@gmail.com
             CERTBOT_EMAIL: dickenstawanda@gmail.com
