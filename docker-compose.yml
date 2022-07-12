@@ -5,7 +5,7 @@ services:
         image: tawandachiteshe/nginx-certbot:latest
         restart: unless-stopped
         environment:
-            VIRTUAL_HOST: api.runhare.org
+            VIRTUAL_HOST: keycloak.runhare.org
             VIRTUAL_PORT: 8000
             LETSENCRYPT_HOST: keycloak.runhare.org
             DEFAULT_EMAIL: dickenstawanda@gmail.com
