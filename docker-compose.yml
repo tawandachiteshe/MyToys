@@ -1,0 +1,46 @@
+version: '3'
+
+services:
+    nginx:
+        image: tawandachiteshe/nginx-certbot:latest
+        restart: unless-stopped
+        environment:
+            VIRTUAL_HOST: api.runhare.org
+            VIRTUAL_PORT: 8000
+            LETSENCRYPT_HOST: keycloak.runhare.org
+            DEFAULT_EMAIL: dickenstawanda@gmail.com
+            CERTBOT_EMAIL: dickenstawanda@gmail.com
+        ports:
+          - 80:80
+          - 443:443
+        volumes:
+          - ./nginx/conf.d:/etc/nginx/user.conf.d:ro
+          - letsencrypt:/etc/letsencrypt
+        links:
+          - keycloak:keycloak
+
+    keycloak:
+        build: .
+        environment:
+  #Database Configuration
+          KC_DB: keycloak
+          KC_DB_URL: 'jdbc:postgresql://database.runhare.org/keycloak'
+          KC_DB_USERNAME: postgres
+          KC_DB_PASSWORD: nRXCAHD3vunQNR
+          KC_DB_SCHEMA: public
+  #Hostname Configuration
+          KC_HOSTNAME: "keycloak.runhare.org"
+          KC_HOSTNAME_STRICT_HTTPS: 'true'
+  #Admin Credentials
+          KEYCLOAK_USER: admin
+          KEYCLOAK_PASSWORD: nRXCAHD3vunQNR
+          KEYCLOAK_ADMIN: admin
+          KEYCLOAK_ADMIN_PASSWORD: nRXCAHD3vunQNR
+        ports:
+          - 8080:8080
+
+volumes:
+  static_volume:
+  media_volume:
+  www_volume:
+  letsencrypt:

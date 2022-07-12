@@ -1,0 +1,7 @@
+location /static {
+    alias /home/runhare/web/static;
+}
+
+location /media {
+  alias /home/runhare/web/media;
+}
