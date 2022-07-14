@@ -26,7 +26,7 @@ services:
           KC_DB: keycloak
           KC_DB_URL: 'jdbc:postgresql://database.runhare.org/keycloak'
           KC_DB_USERNAME: postgres
-          KC_DB_PASSWORD: nRXCAHD3vunQNR
+          KC_DB_PASSWORD: nRXCAHD3vunQNR-password
           KC_DB_SCHEMA: public
   #Hostname Configuration
           KC_HOSTNAME: "keycloak.runhare.org"
@@ -35,9 +35,9 @@ services:
           # KC_HOSTNAME_STRICT_HTTPS: 'true'
   #Admin Credentials
           KEYCLOAK_USER: admin
-          KEYCLOAK_PASSWORD: nRXCAHD3vunQNR
+          KEYCLOAK_PASSWORD: nRXCAHD3vunQNR-password
           KEYCLOAK_ADMIN: admin
-          KEYCLOAK_ADMIN_PASSWORD: nRXCAHD3vunQNR
+          KEYCLOAK_ADMIN_PASSWORD: nRXCAHD3vunQNR-password
         ports:
           - 8080:8080
 
